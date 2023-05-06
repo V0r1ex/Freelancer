@@ -1,0 +1,148 @@
+@import '../_constants';
+@import '../_mixins';
+
+.header {
+    background-color: $fon;
+    background-image: url(../img/header_fon.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: $gray;
+
+    .section-inner {
+        min-height: 825px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 128px;
+        gap: 50px;
+        flex-wrap: wrap;
+    }
+
+    &__logo {
+        color: inherit;
+        font-size: 24px;
+        position: relative;
+        font-family: $raleway;
+        &::before {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 2px;
+            width: 0;
+            transition: .5s ease-in-out;
+            background-color: $pink;
+            top: 100%;
+            content: '';
+        }
+        @media only screen and (min-width: 480px) {
+            &:hover:before {
+                width: 100%;
+            }
+        }
+    }
+
+    &__menu {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 50px;
+        align-items: center;
+    }
+
+    &__menu-list {
+        display: flex;
+        gap: 50px;
+        justify-content: center;
+    }
+
+    &__menu-link {
+        color: $dark-gray;
+        position: relative;
+        &::before {
+            position: absolute;
+            left: 0;
+            height: 2px;
+            width: 0;
+            transition: .2s ease-in-out;
+            background-color: $pink;
+            top: 100%;
+            content: '';
+        }
+
+        @media only screen and (min-width: 480px) {  
+            &:hover {
+                color: $gray;
+                &:before {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    &__menu-btn {
+        border: 2px solid $gray;
+        color: $gray;
+        background-color: transparent;
+
+        @media only screen and (min-width: 480px) { 
+            &:hover {
+                color: #fff;
+                border-color: #fff;
+            }
+        }
+    }
+
+    // media
+
+    @media (max-width: 908px) {
+        &__top {
+            justify-content: center;
+            padding-top: 70px;
+        } 
+    }
+
+    @media (max-width: 735px) {
+        &__menu {
+            justify-content: center;
+            gap: 50px;
+        } 
+    }
+}
+
+.intro {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 128px;
+
+    &__content {
+        padding-top: 92px;
+        max-width: 500px;
+    }
+
+    &__title {
+        margin-bottom: 20px;
+        font-weight: 700;
+        font-size: 56px;
+        line-height: 74px;
+    }
+
+    &__text {
+        color: $gray;
+        margin-bottom: 40px;
+    }
+
+    // media
+
+    @media (max-width: 1183px) {
+        & {
+            justify-content: center;
+            text-align: center;
+        } 
+    }
+    
+}

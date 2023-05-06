@@ -1,0 +1,25 @@
+// colors
+
+$pink: #FC3867;
+$gray: #C4C4C4;
+$dark-gray: #646464;
+$pale-gray: #999999;
+$border-stat: #D8D8D8;
+$markers: #272727;
+$dark: #070707;
+$light-gray: #C4C4C4;
+$fon: #040F28;
+
+// fonts
+
+$dm: 'DM Sans', sans-serif;
+$raleway: 'Raleway', sans-serif;
+$ubuntu: 'Ubuntu', sans-serif;
+
+// animations 
+
+@keyframes rotateSpinner {
+    0% { transform: rotate(0deg) }
+    100% { transform: rotate(360deg) }
+}
+

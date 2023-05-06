@@ -1,0 +1,131 @@
+@import '../_mixins';
+@import '../_constants';
+
+.registration {
+    animation: appearanceModal .2s cubic-bezier(0, 0, 0.2, 1) forwards;
+    position: fixed;
+    @include center();
+    height: 590px;
+    width: 500px;
+    padding: 50px 40px;
+    background-color: #171e30;
+    text-align: center;
+    color: #fff;
+    border-radius: 14px;
+    @include flex_center(); 
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, .4);
+    font-size: 16px;
+    z-index: 1;
+
+    &-inner {
+        height: 100%;
+    }
+
+    &-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+    }
+
+    &__title {
+        color: $light-gray;
+        margin-bottom: 50px;
+    }
+
+    &__fields {
+        margin-bottom: 50px;
+    }
+
+    &__input {
+        width: 100%;
+        background-color: #fff;
+        border-radius: 100px;
+        padding: 5px 10px;
+        border: 2px solid $gray;
+        &:focus {
+            border-color: $pink;
+        }
+        & + & {
+            margin-top: 20px;
+        }
+    }
+
+    &__row {
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+    &__remember {
+        @include flex_center();
+    }
+
+    &__close-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        border-radius: 3px;
+        color: inherit;
+        background-color: $pink;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+    }
+
+    &__checkbox {
+        margin-right: 20px;
+        cursor: pointer;
+        position: relative;
+        transition: .2s;
+        height: 20px;
+        width: 20px;
+        border: 2px solid $pink;
+        appearance: none;
+        border-radius: 5px;
+        @include flex_center();
+
+        &::after {
+            content: '';
+            position: absolute;
+            font-size: 12px;
+        }
+
+        &:checked {
+            background-color: $pink;
+            &::after {
+                color: #fff;
+                content: '\2714'
+            }
+        }
+    }
+
+    &__singin {
+        color: inherit;
+        cursor: pointer;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &__submit {
+        width: 100%;
+        padding: 0;
+        height: 50px;
+    }
+
+    @media (max-width: 550px) {
+        width: 320px;
+    }
+}
+
+@keyframes appearanceModal {
+    0% {
+        left: -500px;
+    }
+
+    100% {
+        left: 50%;
+    }
+}
+

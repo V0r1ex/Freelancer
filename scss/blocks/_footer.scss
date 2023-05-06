@@ -1,0 +1,99 @@
+@import '../_constants';
+@import '../_mixins';
+
+
+.footer {
+    background-color: $dark;
+    padding-top: 40px;
+    color: #fff;
+
+    &__top {
+        display: flex;
+        gap: 100px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 40px;
+    }
+
+    &__body {
+        max-width: 318px;
+    }
+
+    &__title {
+        margin-bottom: 9px;
+    }
+
+    &__text {
+        margin-bottom: 24px;
+        color: $light-gray;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    &__social {
+        display: flex;
+        gap: 16px;
+    }
+
+    &__social-item {
+        display: block;
+        height: 32px;
+        width: 32px;
+        background-color: #fff;
+        color: $gray;
+        border-radius: 50%;
+        @include flex_center();
+        font-size: 18px;
+        transition: .4s ease-in-out;
+        @media only screen and (min-width: 480px) {
+            &:hover {
+                background-color: $pink;
+                color: #fff;
+            }
+        }
+    }
+
+    &__nav {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 94px;
+    }
+
+    &__menu-title {
+        margin-bottom: 26px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 18px;
+    }
+
+    &__menu-item {
+        margin-bottom: 26px;
+    }
+
+    &__menu-link {
+        color: $light-gray;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 16px;
+        @media only screen and (min-width: 480px) {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__bottom {
+        border-top: 1px solid $light-gray;
+        height: 50px;
+        @include flex_center()
+    }
+
+    &__rights {
+        color: $gray;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 16px;
+    }
+}
